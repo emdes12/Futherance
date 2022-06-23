@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furtherance</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link href="./css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    
+    <style>
+        #preloader {
+            transition: all 1s ease-in-out;
+        }
+
+        .preloadcont {
+            width: 100%;
+            top: 0;
+            position: absolute;
+            left: 0;
+            z-index: -1;
+            background-color: rgba(83, 73, 230, 0.397);
+            height: 100vh;
+        }
+        .preloader-container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .preloader-logo {
+            width: 100px;
+            height: 100px;display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0;
+            align-items: center;
+            position: relative;
+        }
+
+        .circley {
+            width: 20px;
+            margin: 5px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        .hliney {
+            background-color: white;
+            width: 5px;
+            height: 25px;
+            position: absolute;
+            bottom: 20px;
+            left: 12.5px;
+            border-radius: 2.5px;
+        }
+
+        .vliney {
+            background-color: white;
+            height: 5px;
+            width: 25px;
+            position: absolute;
+            border-radius: 2.5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader-container" id="preloader">
+        <div class="preloadcont"></div>
+        <div class="preloader-logo">
+            <div class="circley circ-1" id=""></div>
+            <div class="circley circ-2"></div>
+            <div class="circley circ-3"></div>
+            <div class="circley circ-4"></div>
+            <div class="circley circ-5"></div>
+            <div class="circley circ-6"></div>
+            <div class="circley  circ-7"></div>
+            <div class="circley circ-8"></div>
+            <div class="circley circ-9"></div>
+            <div class="hliney  hline1"></div>
+            <div class="vliney vline1"  style="
+            left: 20px;
+            top: 14.5px;"></div>
+            <div class="vliney vline2" style="
+            left: 20px;
+            top: 47.5px;"></div>
+            <div class="vliney vline3" style="
+            left: 55px;
+            top: 14.5px;"></div>
+        </div>
+    </div>
+    <div class="sel" style="opacity: 0.3;">
+    </div>
+    <header>
+        <div class="head1">
+            <img src="./images/logo.png" style="width: 50px;">
+            <br>
+            <h2>FURTHERANCE</h2>
+            <br>
+            <b>SUPPORT LIMITED</b>
+        </div>
+        <div style="width: 10px;"></div>
+        <div class="head2">
+            <ul>
+                <button>
+                    <i class="fa fa-arrow-right-long" style="font-size: 18px;"></i> | Get Start
+                </button>
+                <div class="ctop"  style="cursor: pointer;">
+                    <i class="fa fa-bars" onclick="menuOpen()"></i>
+                </div>
+                <div class="ctop" style="cursor: pointer;" onclick="searchOpen()">
+                    <i class="fa fa-search"></i>
+                </div>
+                <li class="poses"><a href="#contact">Contact Us</a></li>
+                <li class="poses"><a href="#prodserv">Products & Services</a></li>
+                <li class="poses"><a href="#About">About Us</a></li>
+                <li class="poses"><a href="#Home">Home</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="dropmenu" onclick="menuClose()" id="dropmenu">
+        <button class="btn menu-close-btn" id="menu-close-btn">
+            <i class="fa fa-close"></i>
+        </button>
+        <ul class="drop">
+            <li class="sm-hid">
+                <a href="#" class="drop-list">Home</a>
+            </li>
+            <li class="sm-hid">
+                <a href="#" class="drop-list">Products & Services</a>
+            </li>
+            <li class="sm-hid">
+                <a href="#" class="drop-list">Contact Us</a>
+            </li>
+            <li class="sm-hid">
+                <a href="#" class="drop-list">About Us</a>
+            </li>
+            <li>
+                <a href="#" class="drop-list">History/Mission</a>
+            </li>
+            <li>
+                <a href="#" class="drop-list">Don't Get Bored</a>
+            </li>
+            <li>
+                <a href="#" class="drop-list">Let Get U Covered</a>
+            </li>
+            <li>
+                <a href="#" class="drop-list">Meet Us on Social Media</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="search-form-container container" id="search-form-container">
+        <div class="form-container-inner">
+            <form  class="form">
+                <input type="text" class="form-input" placeholder="What are you looking for?">
+                <button class="btn form-btn" type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+            <span class="form-note">Or press Esc to close</span>
+        </div>
+
+        <button class="btn form-close-btn place-items-center" onclick="searchClose()" id="form-close-btn">
+            <i class="fa fa-close"></i>
+        </button>
+    </div>
+    <div class="ahe">
+        <div class="swem">
+            <div class="ahe1">
+                <p>Follow Us - Fb./Tw./Inst.</p>
+            </div>
+            <div class="ahe2">
+                <p>
+                    We Are Creative
+        
+                </p>
+                <div>
+                    <h1>
+                        Best ATM Solution Company
+                    </h1>
+                </div>
+                <p>
+                    Get the most of reduction in your team's operating 
+                    <br>
+                    creates amazing UI/UX experience.
+                </p>
+                <div>
+                    <button> <i class="fa fa-arrow-right-long" style="font-size: 18px;"></i> | Read More</button>
+                </div>
+            </div>
+        </div>
+        <div class="swem">
+        <div class="ahe3">
+            <div class="imgc">
+                <img src="./images/6724401_meltechnologies16_jpeg5fc1c7e850b1ee894125a3767da26ac5.jpeg" alt="ATM machine" >
+            </div>
+        </div>
+        <div class="ahe4">
+            <div>
+                <button>Prv</button>
+                <button>Next</button>
+            </div>
+    
+        </div>
+        
+        </div>
+    </div>
+    <div class="text-center">
+    <h3>We Are World Best It Solution Company</h3>
+    </div>
+    <div class="wrapper">
+        <div class="wrap">
+            <i class="fa fa-arrow-right" style="font-size: 45px;"></i>
+            <p>Atm Sales</p>
+        </div>
+        <div class="wrap">
+            <i class="fa fa-arrow-right" style="font-size: 45px;"></i>
+            <p>Atm Spare parts</p>
+        </div>
+        <div class="wrap">
+            <i class="fa fa-arrow-right" style="font-size: 45px;"></i>
+            <p>Refurbishment of Atm</p>
+        </div>
+        <div class="wrap">
+            <i class="fa fa-arrow-right" style="font-size: 45px;"></i>
+            <p>Security Solutions</p>
+        </div>
+        <div class="wrap">
+            <i class="fa fa-arrow-right" style="font-size: 45px;"></i>
+            <p>Custom Software Solutions</p>
+        </div>
+        <div class="wrap">
+            <i class="fa fa-arrow-right" style="font-size: 45px;"></i>
+            <p>Networking and infrastructure</p>
+        </div>
+        <div class="wrap">
+            <i class="fa fa-arrow-right" style="font-size: 45px;"></i>
+            <p>Cloud Services</p>
+        </div>
+        <div class="wrap">
+            <i class="fa fa-arrow-right" style="font-size: 45px;"></i>
+            <p>Digital Marketing Solutions</p>
+        </div>
+    </div>
+    <div class="text-cent">
+        Call to ask question: 123-456-7890 or 456-789-1430
+    </div>
+    <div class="flebin2">
+        <div class="flexb1">
+            <div class="imgwrap">
+                <img src="./images/6724401_meltechnologies16_jpeg5fc1c7e850b1ee894125a3767da26ac5.jpeg" class="flexb1img">
+                <img src="./images/6724400_meltechnologies14_jpeg48492a395665e28d04dda4133da7adc2.jpeg" class="imgrig">
+                <img src="./images/6724400_meltechnologies14_jpeg48492a395665e28d04dda4133da7adc2.jpeg" class="imgleft">
+            </div>
+        </div>
+        <div class="flexb2">
+            <h4>
+                IT Solutions with years of experience
+            </h4>
+            <p>
+                FSL is one of the best upcoming  information and Solutions technology companies in Nigeria. We hace successfully developed from a small body to a company providing various ICT services and sales of Atms spare parts to small scale business and large organizations across Nigeria. Our team is made up of innovative and indefatigable professionals with a vast knowledge of their specified areas of influence.
+                <br>
+                <br>
+                At Furtherance Support LIMITEDLimited, our major goals is to ensure our esteemed customers are giving the solutions that will help leverage their investments to achieve their business objectives. Client satisfaction, effective service delivery and cost-effectiness are our core values.
+            </p>
+            <br>
+            <br>
+            <div class="btf">
+                <div class="cicl">
+                    <i class="fa fa-phone" style="font-size: 18px;"></i>
+                </div>
+                <div class="btff">
+                    <div>Call to ask question:</div><br>
+                    <div style="font-weight: 600; font-size: 12px;">+234-8081-635-343</div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="fors">
+
+        <div class="text-center">
+            <h3>
+                We offer a wide variety of IT Services
+            </h3>
+        </div>
+        <div class="forf">
+            <div class="hidhov">
+                <div class="hov">
+                    <p>
+                        We help businesses elevate their value through custom software Development product designs.
+                        <br>
+                        It Solutions
+                        <br>
+                        ..Web solution
+                        <br>
+                        Development
+                    </p>
+                </div>
+                <div class="forfe" id="">
+                    <div class="squ">
+                     <i class="fa fa-user"></i>
+                    </div>
+                    <div class="txt">
+                    Deep Expertise & Leadership
+                    </div>
+                </div>
+            </div>
+            <div class="hidhov">
+                <div class="hov">
+                    <p>
+                        We help businesses elevate their value through custom software Development product designs.
+                        <br>
+                        It Solutions
+                        <br>
+                        ..Web solution
+                        <br>
+                        Development
+                    </p>
+                </div>
+                <div class="forfe" id="">
+                <div class="squ">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="txt">
+                    Custom Software Development
+                </div>                
+                </div>
+            </div>
+            <div class="hidhov">
+                <div class="hov">
+                    <p>
+                        We help businesses elevate their value through custom software Development product designs.
+                        <br>
+                        It Solutions
+                        <br>
+                        ..Web solution
+                        <br>
+                        Development
+                    </p>
+                </div>
+                <div class="forfe" id="">
+                <div class="squ">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="txt">
+                    Software Product Development
+                </div>                
+                </div>
+            </div>
+            <div class="hidhov">
+                <div class="hov">
+                    <p>
+                        We help businesses elevate their value through custom software Development product designs.
+                        <br>
+                        It Solutions
+                        <br>
+                        ..Web solution
+                        <br>
+                        Development
+                    </p>
+                </div>
+                <div class="forfe" id="">
+                <div class="squ">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="txt">
+                    Deep Expertise & Leadership
+                </div>                
+                </div>
+            </div>
+            <div class="hidhov">
+                <div class="hov">
+                    <p>
+                        We help businesses elevate their value through custom software Development product designs.
+                        <br>
+                        It Solutions
+                        <br>
+                        ..Web solution
+                        <br>
+                        Development
+                    </p>
+                </div>
+                <div class="forfe" id="">
+                <div class="squ">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="txt">
+                    Deep Expertise & Leadership
+                </div>                
+                </div>
+            </div>
+            <div class="hidhov">
+                <div class="hov">
+                    <p>
+                        We help businesses elevate their value through custom software Development product designs.
+                        <br>
+                        It Solutions
+                        <br>
+                        ..Web solution
+                        <br>
+                        Development
+                    </p>
+                </div>
+                <div class="forfe" id="">
+                <div class="squ">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="txt">
+                    Deep Expertise & Leadership
+                </div>                
+                </div>
+            </div>
+        </div>
+
+        <div class="topflo">
+            <div class="inflo">
+                <div class="icoflo">
+                    <i class="fa fa-info"></i>
+                </div>
+                <div class="tflo">
+                    <div class="tflo1">25k<sub>+</sub></div>
+                    <div class="tflo2"><small>Happy Clients</small></div>
+                </div>
+            </div>
+            <div class="inflo">
+                <div class="icoflo">
+                    <i class="fa fa-info"></i>
+                </div>
+                <div class="tflo">
+                    <div class="tflo1">796<sub>+</sub></div>
+                    <div class="tflo2"><small>Project Completed</small></div>
+                </div>
+            </div>
+            <div class="inflo">
+                <div class="icoflo">
+                    <i class="fa fa-info"></i>
+                </div>
+                <div class="tflo">
+                    <div class="tflo1">85<sub>+</sub></div>
+                    <div class="tflo2"><small>Business Partners</small></div>
+                </div>
+            </div>
+            <div class="inflo">
+                <div class="icoflo">
+                    <i class="fa fa-info"></i>
+                </div>
+                <div class="tflo">
+                    <div class="tflo1">75<sub>+</sub></div>
+                    <div class="tflo2"><small>professional Team</small></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="exp">
+        <div class="expin">
+            <h4 class="exptitle">We are Here to IT Solution with 20 years of experience</h4>
+            <div class="aim">
+                <div class="aimh active" id="aimHe" onclick="hisAddact()">History</div>
+                <div style="width: 15px;"></div>
+                <div class="aimm" id="aimMe" onclick="misAddact()">Mission</div>
+            </div>
+            <div class="aimbody">
+                <div class="aimh1" id="aimh1">
+                    <br>
+                    <br>
+                    <p>
+                        FSL is one of the best upcoming information and Solutions technology companies in Nigeria. We have succesfully developed from a small body to a compnay providing various ICT services and slaes of Atms spare parts to small scale business and large organizations acroos Nigeria.
+                    </p>
+                    <br>
+                    <br>
+                    <div class="hislent">
+                        <div class="hisleft">History Solutions</div>
+                        <br>
+                        <div class="hisrange">
+                            <div class="range-length"></div>
+                            <div class="hispec">75%</div>
+                            <div class="rangepoint"></div>
+                        </div>
+                    </div>
+                                    
+                </div>
+                <div id="aimm1">
+                    <p class="aimm1">
+                        <br>
+                        <br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quod labore, aliquam facere mollitia ratione beatae quis asperiores fuga, at perspiciatis. Mollitia minus provident odit totam culpa quisquam ea tenetur?
+                    </p>
+                </div>
+            </div>
+            
+
+        </div>
+        <div class="expin">
+            <div class="imgflorel">
+                <img src="./images/6724400_meltechnologies14_jpeg48492a395665e28d04dda4133da7adc2.jpeg" alt="img" class="expup">
+                <div class="expsimg">
+                    <img src="./images/6724401_meltechnologies16_jpeg5fc1c7e850b1ee894125a3767da26ac5.jpeg" alt="simg" class="expup1">
+                </div>
+                <div class="sel1" style="opacity: 0.3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="product">
+        <h2 class="product-head">Check Out Our Products</h2>
+        <p class="product-sit">Many of the top banks have chosen FSL to help them deliver innovative producsts</p>
+    </div>
+    
+    <div class="slide-container">
+        <div class="slider-border">
+            <div class="slider-box">
+                <div class="minus-slide">+</div>
+                <div class="s-text">
+                    <div class="leds">
+                        <h4>Mobile Coin View App</h4>
+                        <br>
+                        <p>We carry more than just good coding skills. our experience makes us stand out from other development.</p>
+                        <br>
+                        <div class="lines"></div>
+                        <p>Code carry more than just good skills. Our experience</p>
+                        <div class="minus-slide">-</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-box">
+                <div class="minus-slide">+</div>
+                <div class="s-text">
+                    <div class="leds">
+                        <h4>Mobile Coin View App</h4>
+                        <br>
+                        <p>We carry more than just good coding skills. our experience makes us stand out from other development.</p>
+                        <br>
+                        <div class="lines"></div>
+                        <p>Code carry more than just good skills. Our experience</p>
+                        <div class="minus-slide">-</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="slider-box">
+                <div class="minus-slide">+</div>
+                <div class="s-text">
+                    <div class="leds">
+                        <h4>Mobile Coin View App</h4>
+                        <br>
+                        <p>We carry more than just good coding skills. our experience makes us stand out from other development.</p>
+                        <br>
+                        <div class="lines"></div>
+                        <p>Code carry more than just good skills. Our experience</p>
+                        <div class="minus-slide">-</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-box">
+                <div class="minus-slide">+</div>
+                <div class="s-text">
+                    <div class="leds">
+                        <h4>Mobile Coin View App</h4>
+                        <br>
+                        <p>We carry more than just good coding skills. our experience makes us stand out from other development.</p>
+                        <br>
+                        <div class="lines"></div>
+                        <p>Code carry more than just good skills. Our experience</p>
+                        <div class="minus-slide">-</div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+           
+        </div>
+        <div class="slide-move">
+            <button onclick="plusSlides(-1)">
+                <i class="fa fa-arrow-left"></i>
+            </button>
+            <button onclick="plusSlides(1)">
+                <i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="focus-container">
+        <div class="focus-body">
+            <div class="bdyin">
+                <div class="focus-scale">
+                    <h4>Focus on Your Business</h4>
+                    <p>
+                        Many of the world's top brands have chosen Integrie to help them design and deliver innovative products.
+                    </p>
+                </div>
+                
+            <div class="btf">
+                <div class="cicl">
+                    <i class="fa fa-phone" style="font-size: 18px;"></i>
+                </div>
+                <div class="btff">
+                    <div>Call to ask question:</div><br>
+                    <div style="font-weight: 600; font-size: 12px;">+234-8081-635-343</div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="focus-brand">
+            <div class="brand-list">
+                <img src="./images/Graphic3.PNG" alt="" class="brand">
+            </div>
+
+            <div class="brand-list">
+                <img src="./images/Graphic3.PNG" alt="" class="brand">
+            </div>
+
+            <div class="brand-list">
+                <img src="./images/Graphic3.PNG" alt="" class="brand">
+            </div>
+
+            <div class="brand-list">
+                <img src="./images/Graphic3.PNG" alt="" class="brand">
+            </div>
+
+            <div class="brand-list">
+                <img src="./images/Graphic3.PNG" alt="" class="brand">
+            </div>
+        </div>
+    </div>
+
+    <div class="opt-service">
+        <div class="opt-cont">
+            <div class="opt-list">
+                <i class="fa fa-bell"></i>
+                <div class="opt-text">
+                    <h4>Augmented Reality</h4>
+                    <p>We carry more than just is our experience</p>
+                </div>
+                <div class="opt-more">
+                    <button class="read-more">Read More</button>
+                </div>
+            </div>
+            
+            <div class="opt-list">
+                <i class="fa fa-bell"></i>
+                <div class="opt-text">
+                    <h4>Augmented Reality</h4>
+                    <p>We carry more than just is our experience</p>
+                </div>
+                <div class="opt-more">
+                    <button class="read-more">Read More</button>
+                </div>
+            </div>
+            
+            <div class="opt-list">
+                <i class="fa fa-bell"></i>
+                <div class="opt-text">
+                    <h4>Augmented Reality</h4>
+                    <p>We carry more than just is our experience</p>
+                </div>
+                <div class="opt-more">
+                    <button class="read-more">Read More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wid-var">
+        <h3>We Offer a Wide Variety of IT Services</h3>
+        <div class="var-large">
+            <div class="setvar">
+                <h4>3 Ways of Lying to Yourself About Your Relationship.</h4>
+                <p>Office, Meeting, 5 minus</p>
+                <p class="opac">
+                    We carry more than just good coding skills, our experience makes us stand out from other development.
+                </p>
+                <div class="white-circle"></div>
+            </div>
+            
+            <div class="setvar">
+                <h4>3 Ways of Lying to Yourself About Your Relationship.</h4>
+                <p>Office, Meeting, 5 minus</p>
+                <p class="opac">
+                    We carry more than just good coding skills, our experience makes us stand out from other development.
+                </p>
+                <div class="white-circle"></div>
+            </div>
+            
+            <div class="setvar">
+                <h4>3 Ways of Lying to Yourself About Your Relationship.</h4>
+                <p>Office, Meeting, 5 minus</p>
+                <p class="opac">
+                    We carry more than just good coding skills, our experience makes us stand out from other development.
+                </p>
+                <div class="white-circle"></div>
+            </div>
+        </div>
+
+        <div class="customer-services">
+            <div class="serv-container">
+                <div class="service-title">
+                    <h2>How Can We Help you?</h2>
+                    <small >Where you will find the same quality of service and dedication.</small>
+                </div>
+
+                <form action="mailto:naijabayz@gmail.com" method="post">
+                    <div class="form-wrap">
+                        <select name="services" id="" >
+                            <option value="">Select Services</option>
+                            <option value="">ATM Spare Part</option>
+                            <option value="">Web Development</option>
+                            <option value="">Data Analysis</option>
+                            <option value="">Software Development</option>
+                            <option value="">ATM Service</option>
+                            
+                        </select>
+    
+                        <div id="floatContainer" class="float-container"> 
+                            <label for="floatField">Your Name*</label>
+                            <input type="text" name="name" id="floatField" data-placeholder="Your Name Here">
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-wrap">
+                        <div class="form-wrap1">
+                            <div id="floatContainer" style="width: 49%; margin: 0;" class="float-container">
+                                <label for="floatField">Phone*</label>
+                                <input type="text" name="floatField" id="floatField" data-placeholder="+234-8081-635-343">
+                            </div>
+        
+                            
+                            <div id="floatContainer" style="width: 49%; margin: 0;" class="float-container">
+                                <label for="floatField">Email*</label>
+                                <input type="email" name="email" id="floatField" data-placeholder="info@furtherance.com">
+                            </div>
+                        </div>
+
+                        <div id="floatContainer" class="float-container">
+                            <label for="floatField">Your Company</label>
+                            <input type="text" name="company" id="floatField" data-placeholder="Alawiye">
+                        </div>
+                    </div>
+                                        
+                    <div class="submit">
+                        <input type="submit" value="SEND REQUEST">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-details">
+        <div class="our-profile">
+            <div class="head1">
+                <img src="./images/logo.png" style="width: 50px;">
+                <br>
+                <h2>FURTHERANCE</h2>
+                <br>
+                <b>SUPPORT LIMITED</b>
+            </div>
+            <p>Interested in working with us?</p>
+            <p>furtherance@gmail.com</p>
+        </div>
+
+        <div class="our-address">
+            <h6>Address</h6>
+            <br>
+            <br>
+            <address>7 Tade Aranmolate Close, Off Babs Animashaun , Surulere, Lagos, Nigeria.</address>
+            <br>
+            <b>Contact Us</b>
+            <p>P: +234-8081-635-343</p>
+
+        </div>
+
+        <div class="about">
+            <h6>About</h6>
+            <br>
+            <br>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Career</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Stories</a></li>
+            </ul>
+
+        </div>
+
+        <div class="subscribe">
+            <h6>Subscribe</h6>
+            <br>
+            <br>
+            <p>Sign up for our latest news and articles. <br> We won't give you spam mails.</p>
+            <form action="#">
+                <input type="email" name="mail" placeholder="Enter your email">
+                <input type="submit" value="SEND">
+            </form>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright 2021 All Rights Reserved</p>
+
+        <button>ENGLISH</button>
+    </footer>
+    <div id="preloader-rem">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/b-KV7gRWNKA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/b-KV7gRWNKA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/b-KV7gRWNKA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js" integrity="sha512-6zTDRWNxo8vI6JZYDCwhrJpg5icK3P4HNnW3czsO5Scb3lAoPDam+/wF3eog4hxcl0h44d0XlIcFkuoSaWHQ2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const tl = gsap.timeline({defaults: {duration: .75, yoyo: true, repeat: -1}})
+
+        tl.fromTo('.circley', {scale: 0}, {scale: 1})
+        tl.fromTo('.vliney', {opacity: 0, scale: 0}, {opacity: 1, scale: 1}, '<')
+        tl.fromTo('.hliney', {opacity: 0, y: 20}, {opacity: 1,  y: 0}, '<')
+    </script>
+    <script src="./appworker.js"></script>
+
+    <script>
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener("load", function(){
+            loader.style.display = "none"
+        })
+    </script>
+
+<script>
+    var loadem = document.getElementById("preloader-rem");
+
+    window.addEventListener("load", function(){
+        loadem.style.display = "none"
+    })
+</script>
+</body> 
+</html>

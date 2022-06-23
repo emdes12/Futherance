@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>preloader-logo</title>
+    <style>
+
+        .preloader-container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .preloader-logo {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0;
+            align-items: center;
+            position: relative;
+        }
+
+        .circley {
+            width: 20px;
+            margin: 5px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        .hliney {
+            background-color: white;
+            width: 5px;
+            height: 25px;
+            position: absolute;
+            bottom: 20px;
+            left: 12.5px;
+            border-radius: 2.5px;
+        }
+
+        .vliney {
+            background-color: white;
+            height: 5px;
+            width: 25px;
+            position: absolute;
+            border-radius: 2.5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader-container">
+        <div class="preloader-logo">
+            <div class="circley circ-1" id=""></div>
+            <div class="circley circ-2"></div>
+            <div class="circley circ-3"></div>
+            <div class="circley circ-4"></div>
+            <div class="circley circ-5"></div>
+            <div class="circley circ-6"></div>
+            <div class="circley  circ-7"></div>
+            <div class="circley circ-8"></div>
+            <div class="circley circ-9"></div>
+            <div class="hliney  hline1"></div>
+            <div class="vliney vline1"  style="
+            left: 20px;
+            top: 14.5px;"></div>
+            <div class="vliney vline2" style="
+            left: 20px;
+            top: 47.5px;"></div>
+            <div class="vliney vline3" style="
+            left: 55px;
+            top: 14.5px;"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js" integrity="sha512-6zTDRWNxo8vI6JZYDCwhrJpg5icK3P4HNnW3czsO5Scb3lAoPDam+/wF3eog4hxcl0h44d0XlIcFkuoSaWHQ2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const tl = gsap.timeline({defaults: {duration: .75, yoyo: true, repeat: -1}})
+
+        tl.fromTo('.circley', {scale: 0}, {scale: 1})
+        tl.fromTo('.vliney', {opacity: 0, scale: 0}, {opacity: 1, scale: 1}, '<')
+        tl.fromTo('.hliney', {opacity: 0, y: 20}, {opacity: 1,  y: 0}, '<')
+    </script>
+    
+</body>
+</html>
