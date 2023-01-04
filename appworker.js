@@ -1,3 +1,6 @@
+//window details
+document.getElementById("windet").innerHTML = "width: " + window.innerWidth + " height: " + window.innerHeight;
+
 //slide mover
 var slideIndex = 1;
 showSlides(slideIndex);
